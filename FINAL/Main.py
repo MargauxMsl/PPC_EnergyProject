@@ -422,14 +422,12 @@ def connectToMarket(message, index):
 # WEATHER FACTOR----------------------------------------------------------------------------------------
 def weather(temp, list):
     while True:
-        clock = random.randint(0,10)
-        for i in range(clock):
-            time.sleep(1)
-            temp_variation = random.randint(-2,2)
-            #print(f'The current temperature is {temp.value} degrees')
-            temp.value = temp.value + temp_variation
-            for j in range(len(list)):
-                list[j] = temp.value
+        time.sleep(1)
+        temp_variation = random.randint(-2,2)
+        #print(f'The current temperature is {temp.value} degrees')
+        temp.value = temp.value + temp_variation
+        for j in range(len(list)):
+            list[j] = temp.value
 
 #CLOSING CONNECTION-------------------------------------------------------------------------------------
  
