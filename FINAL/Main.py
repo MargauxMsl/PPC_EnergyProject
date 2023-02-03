@@ -251,13 +251,10 @@ def home(index,barrier,barrier_sock):
     while True:
 
         homeDisplay(index,production_rate, consumption_rate, stock, energy_trade_policy, income, asset)
-
-        # The stock is decremented everyday due to the consumption of energy
-        stock -= 0.1 * consumption_rate
-
-        # At the end of the day, the energy variables are updated 
+        
+        # Each day, the energy variables are updated 
         consumption_rate = 1.1 * consumption_rate
-        stock = production_rate - consumption_rate
+        stock += production_rate - consumption_rate
         startClock=time.time()
         endClock=time.time()
 
